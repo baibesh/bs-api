@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "applications",
+  "info": {
+    "singularName": "application",
+    "pluralName": "applications",
+    "displayName": "application",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "patronymic": {
+      "type": "string"
+    },
+    "groupOrClass": {
+      "type": "string"
+    },
+    "socialStatusFamily": {
+      "type": "enumeration",
+      "enum": [
+        "Полная",
+        "Неполная"
+      ]
+    },
+    "diseases": {
+      "type": "enumeration",
+      "enum": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "idCard": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "medicalReport027": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "club": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::club.club",
+      "inversedBy": "applications"
+    },
+    "parents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::parent.parent",
+      "mappedBy": "application"
+    },
+    "nationality": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::nationality.nationality"
+    },
+    "education_organization": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::education-organization.education-organization"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "новая",
+        "обучается",
+        "отчислен"
+      ],
+      "default": "новая",
+      "required": true
+    },
+    "iin": {
+      "type": "string",
+      "required": true,
+      "maxLength": 12,
+      "minLength": 12,
+      "regex": "^(0|[1-9][0-9]*)$"
+    }
+  }
+}

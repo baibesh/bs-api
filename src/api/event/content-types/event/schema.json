@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_kk": {
+      "type": "string"
+    },
+    "title_ru": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "shortDescription_kk": {
+      "type": "text"
+    },
+    "shortDescription_ru": {
+      "type": "text"
+    },
+    "shortDescription_en": {
+      "type": "text"
+    },
+    "description_kk": {
+      "type": "richtext"
+    },
+    "description_ru": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

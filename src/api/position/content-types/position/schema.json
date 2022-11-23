@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "positions",
+  "info": {
+    "singularName": "position",
+    "pluralName": "positions",
+    "displayName": "position",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name_kk": {
+      "type": "string"
+    },
+    "name_ru": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "tutors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tutor.tutor",
+      "mappedBy": "position"
+    }
+  }
+}

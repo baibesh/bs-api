@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "timetables",
+  "info": {
+    "singularName": "timetable",
+    "pluralName": "timetables",
+    "displayName": "timetable"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "day": {
+      "type": "enumeration",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "start": {
+      "type": "time"
+    },
+    "end": {
+      "type": "time"
+    },
+    "cabinet": {
+      "type": "string"
+    },
+    "club": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::club.club",
+      "inversedBy": "timetables"
+    }
+  }
+}
